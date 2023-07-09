@@ -1,0 +1,127 @@
+html {
+    background: linear-gradient(135deg, #64ABDB 0%, #826EC8 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 800px;
+    padding-top: 100px;
+}
+
+.title {
+    margin-left: 18px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #FFF;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.movie-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    padding: 10px 20px;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: normal;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    color: #FFFFFF;
+    background: linear-gradient(90deg, rgba(107, 102, 166, 0.30) 0%, rgba(117, 209, 221, 0.30) 100%);
+}
+
+.movie-input::placeholder {
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.search-button {
+    position: absolute;
+    align-self: baseline;
+    height: 30px;
+    width: 30px;
+    top: 15px;
+    right: 20px;
+    outline: none;
+    border: none;
+    background-image: url('../resourses/search-icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    cursor: pointer;
+}
+
+.movies {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 65px;
+    padding: 30px 35px;
+}
+
+.movie:hover {
+    border-radius: 35px;
+    background-color: rgba(255, 255, 255, 0.286);
+}
+
+.movie-img {
+    margin-top: 5px;
+    height: 160px;
+    width: 110px;
+    object-fit: contain;
+}
+
+.movie-title {
+    margin-bottom: 7px;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.movie-year {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #F5C518;
+}
+
+.movie-type {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.error {
+    margin-left: 18px;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #FFF;
+}
