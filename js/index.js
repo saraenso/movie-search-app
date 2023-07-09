@@ -30,13 +30,29 @@ formNode.addEventListener("submit", function (event) {
                 </div>
                 <div class="col">
                   <h2 class="movie-title">${movieTitle}</h2>
-                  <h3 class="movie-year">${movieYear}</h3>
+                  <p class="movie-year">${movieYear}</p>
                   <p class="movie-type">${movieType}</p>
                 </div>
               </li>
             `;
 
             moviesListNode.insertAdjacentHTML("beforeend", movieHTML);
+          });
+
+          moviesListNode.addEventListener("click", function (event) {
+            const clickedElement = event.target.closest(".js-movie");
+            if (clickedElement) {
+              const movieTitle = clickedElement.querySelector(".movie-title").textContent;
+              const movieYear = clickedElement.querySelector(".movie-year").textContent;
+              const movieType = clickedElement.querySelector(".movie-type").textContent;
+
+              const params = new URLSearchParams();
+              params.set("title", movieTitle);
+              params.set("year", movieYear);
+              params.set("type", movieType);
+
+              window.location.href = `movie.html?${params.toString()}`;
+            }
           });
         } else {
           const errorHTML = `
@@ -47,10 +63,10 @@ formNode.addEventListener("submit", function (event) {
       })
       .catch((error) => {
         console.error(error);
-        const errorHTML= `
-        <li class="error">An error occured. Please try again later.</li>
+        const errorHTML = `
+        <li class="error">An error occurred. Please try again later.</li>
         `;
         moviesListNode.insertAdjacentHTML("beforeend", errorHTML);
-      })
+      });
   }
 });

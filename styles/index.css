@@ -11,10 +11,11 @@ body {
 .container {
     margin: 0 auto;
     width: 800px;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .title {
+    padding-top: 50px;
     margin-left: 18px;
     margin-bottom: 20px;
     font-size: 40px;
@@ -79,6 +80,7 @@ body {
     align-items: center;
     gap: 65px;
     padding: 30px 35px;
+    cursor: pointer;
 }
 
 .movie:hover {
@@ -95,15 +97,16 @@ body {
 
 .movie-title {
     margin-bottom: 7px;
-    font-size: 35px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    color: #FFFFFF;
 }
 
 .movie-year {
     margin-bottom: 18px;
-    font-size: 20px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -111,10 +114,11 @@ body {
 }
 
 .movie-type {
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    color: #FFFFFF;
 }
 
 .error {
