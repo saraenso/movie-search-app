@@ -6,10 +6,19 @@ const buttonNode = document.querySelector(".js-search-button");
 const moviesListNode = document.querySelector(".js-movies");
 const apiKey = "a33baae9";
 
+inputNode.addEventListener("input", function (event) {
+  const inputValue = event.target.value;
+  const trimmedValue = inputValue.trimStart();
+
+  if (trimmedValue !== inputValue) {
+    event.target.value = trimmedValue;
+  }
+});
+
 formNode.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const searchQuery = inputNode.value;
+  const searchQuery = inputNode.value.trim();
 
   if (searchQuery) {
     moviesListNode.innerHTML = "";
@@ -28,10 +37,12 @@ formNode.addEventListener("submit", function (event) {
             const movieYear = movie.Year;
             const movieType = movie.Type;
 
+            const fallbackImage = "resourses/undefined-movie.png";
+
             const movieHTML = `
               <li class="js-movie movie">
                 <div class="col">
-                  <img class="movie-img" src="${moviePoster}" alt="${movieTitle}">
+                  <img class="movie-img" src="${moviePoster}" alt="${movieTitle}" onerror="this.src='${fallbackImage}'">
                 </div>
                 <div class="col">
                   <h2 class="movie-title">${movieTitle}</h2>

@@ -21,10 +21,12 @@ fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(movieTit
     const movieStarring = data.Actors;
     const moviePlot = data.Plot;
 
+    const fallbackImage = "resourses/undefined-movie.png";
+
     const movieCardHTML = `
       <div class="movie-card">
         <div class="col">
-          <img class="movie-card-img" src="${moviePoster}" alt="${movieTitle}">
+          <img class="movie-card-img" src="${moviePoster}" alt="${movieTitle}" onerror="this.src='${fallbackImage}'">
         </div>
         <div class="col">
           <h2 class="movie-title">${movieTitle}</h2>
