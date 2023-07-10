@@ -103,10 +103,12 @@ window.addEventListener("load", function () {
       const movieYear = movie.Year;
       const movieType = movie.Type;
 
+      const fallbackImage = "resourses/undefined-movie.png";
+
       const movieHTML = `
         <li class="js-movie movie">
           <div class="col">
-            <img class="movie-img" src="${moviePoster}" alt="${movieTitle}">
+          <img class="movie-img" src="${moviePoster}" alt="${movieTitle}" onerror="this.src='${fallbackImage}'">
           </div>
           <div class="col">
             <h2 class="movie-title">${movieTitle}</h2>
