@@ -126,5 +126,6 @@ window.addEventListener("load", function () {
         window.location.href = `movie.html?${params.toString()}`;
       }
     });
+    sessionStorage.removeItem("searchResults");
   }
 });
