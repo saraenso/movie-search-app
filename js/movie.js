@@ -33,10 +33,10 @@ fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(movieTit
             <p class="movie-desc">Rating: <span>${movieRating}</span></p>
             <p class="movie-desc">Release date: <span>${movieReleaseDate}</span></p>
             <p class="movie-desc">Running time: <span>${movieRunningTime}</span></p>
-            <p class="movie-desc">Genre: <span>${movieGenre}</span></p>
-            <p class="movie-desc">Directed by: <span>${movieDirector}</span></p>
-            <p class="movie-desc">Screenplayed by: <span>${movieScreenplayer}</span></p>
-            <p class="movie-desc">Starring: <span>${movieStarring}</span></p>
+            ${movieGenre ? `<p class="movie-desc">Genre: <span>${movieGenre}</span></p>` : ''}
+            ${movieDirector ? `<p class="movie-desc">Directed by: <span>${movieDirector}</span></p>` : ''}
+            ${movieScreenplayer ? `<p class="movie-desc">Screenplayed by: <span>${movieScreenplayer}</span></p>` : ''}
+            ${movieStarring ? `<p class="movie-desc">Starring: <span>${movieStarring}</span></p>` : ''}
           </div>
         </div>
       </div>
