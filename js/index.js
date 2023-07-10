@@ -59,6 +59,7 @@ formNode.addEventListener("submit", function (event) {
               params.set("year", movieYear);
               params.set("type", movieType);
 
+              sessionStorage.setItem("searchResults", JSON.stringify(searchResults));
               window.location.href = `movie.html?${params.toString()}`;
             }
           });
@@ -68,7 +69,6 @@ formNode.addEventListener("submit", function (event) {
           `;
           moviesListNode.insertAdjacentHTML("beforeend", errorHTML);
         }
-        sessionStorage.setItem("searchResults", JSON.stringify(searchResults));
       })
       .catch((error) => {
         console.error(error);
@@ -123,9 +123,11 @@ window.addEventListener("load", function () {
         params.set("year", movieYear);
         params.set("type", movieType);
 
+        sessionStorage.setItem("searchResults", JSON.stringify(searchResults));
         window.location.href = `movie.html?${params.toString()}`;
       }
     });
+
     sessionStorage.removeItem("searchResults");
   }
 });
